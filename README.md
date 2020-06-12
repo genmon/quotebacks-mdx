@@ -1,8 +1,49 @@
 # quotebacks-mdx
-Python Markdown extension to support the Quotebacks format
+
+Python-Markdown extension to support the [Quotebacks](https://quotebacks.net) format.
 
 
+## Installation
 
-## @TODO
+Copy `quotebacks_mdx.py` into your script directory.
 
-- Add config to include script link
+Python-Markdown is required. Python 3 is required.
+
+
+## Usage
+
+Include a citation in a Markdown blockquote using the following format:
+
+```markdown
+> QUOTED-CONTENT
+>
+> -- AUTHOR, [LINKTEXT](URL)
+```
+
+The citation MUST be within the blockquote, and start with "--" and the author must terminate with ",". The citation must be preceded by a blank line.
+
+Use the extension with Python-Markdown:
+
+```python
+import markdown
+import quotebacks_mdx
+
+md = markdown.Markdown(extensions=[quotebacks_mdx.QuotebacksExtension()])
+html = md.convert(markdown_source)
+
+print(html)
+
+# Include quotebacks.js at the bottom of page, if quotebacks were found
+if md.quotebacks_found:
+    html += quotebacks_mdx.QUOTEBACKS_SCRIPT_TAG
+```
+
+
+## Status
+
+This is a proof of concept, but in use at Interconnected, [e.g. this post.](http://interconnected.org/home/2020/06/12/gibson)
+
+Main to-dos:
+
+* Get feedback on the Markdown format
+* Package the extension
