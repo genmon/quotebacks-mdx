@@ -9,9 +9,9 @@ Use by including `QuotebacksExtension()` in the extensions list.
 Converts Markdown of the form:
 
 ```markdown
-   > QUOTED-CONTENT
-   >
-   > -- AUTHOR, [LINKTEXT](URL)
+> QUOTED-CONTENT
+>
+> -- AUTHOR, [LINKTEXT](URL)
 ```
 
 to the quotebacks format.
@@ -120,7 +120,7 @@ class QuotebacksProcessor(markdown.treeprocessors.Treeprocessor):
 
             a_elem = p_elem[0]
             title = a_elem.text
-            cite_url = a_elem.get("href")
+            cite_url = a_elem.get("href", None)
 
             if not title:
                 LOGGER.info("Final a tag must have text for the title")
