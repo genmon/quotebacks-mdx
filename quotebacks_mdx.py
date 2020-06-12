@@ -26,6 +26,9 @@ import xml.etree.ElementTree as ET
 
 LOGGER = logging.getLogger("quotebacks-mdx")
 
+# If required, add this at the bottom of the page
+QUOTEBACKS_SCRIPT_TAG = """<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>"""
+
 
 class QuotebacksExtension(markdown.extensions.Extension):
     """Python-Markdown extension that wraps QuotebacksProcessor and
@@ -59,13 +62,6 @@ class QuotebacksExtension(markdown.extensions.Extension):
         md.treeprocessors.register(
             QuotebacksProcessor(md, self.getConfigs()), "quotebacks", 19
         )
-
-    @staticmethod
-    def script_tag():
-        """
-        Returns the necessary JavaScript include, to be added at the bottom of the page.
-        """
-        return """<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>"""
 
 
 class QuotebacksProcessor(markdown.treeprocessors.Treeprocessor):
@@ -226,13 +222,14 @@ the unexplored adjacent possible of the 80s and 90s.</p>
     html = renderer.convert(source_md)
 
     assert renderer.quotebacks_found is True
-    
+
     print(html)
-    
+
     if html != expected_html:
         LOGGER.error("Generated HTML does not match expected HTML")
     else:
         LOGGER.info("-- SUCCESS --")
+
 
 if __name__ == "__main__":
     # Runs tests only if run as a script
