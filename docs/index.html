@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
+      body {
+        padding: 2em;
+      }
+      main {
+        max-width: 45em;
+      }
+      pre {
+        overflow: auto;
+        word-wrap: normal;
+        white-space: pre;
+      }
       .added {
         color: green;
         background: yellow;
@@ -15,17 +26,32 @@
     </style>
   </head>
   <body>
-  	<h1>Original: Quotebacks extension</h1>
-  	
-  	<h2>Embed</h2>
-  	<blockquote class="quoteback" data-title="A Text Renaissance" data-author="@ribbonfarm" cite="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">
-	The text renaissance is an actual <em>renaissance. </em>It’s a story of history-inspired renewal in a very fundamental way: exciting recent developments are due in part to a new generation of young product visionaries circling back to the early history of digital text, rediscovering old, abandoned ideas, and reimagining the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.
-	<footer>@ribbonfarm <cite><a href="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/</a></cite></footer>
-	</blockquote>
-	<script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>
+    <main>
+      <p>&larr; <i>Go to <a href="https://github.com/genmon/quotebacks-mdx">quotebacks-mdx</a></i></p>
 
-	<h2>Embed: HTML source</h2>
-	<pre>
+      <h1>Output comparisons</h1>
+      
+      <p>
+        This page shows the output of the original, official Quotebacks browser extension versus <code>quotebacks-mdx</code>.
+      </p>
+
+      <hr>
+
+      <h2>ORIGINAL: Official Quotebacks extension</h2>
+      
+      <p><i>Using <a href="https://quotebacks.net">quotebacks.net</a></i></p>
+      
+      <h3>Example embed:</h3>
+
+      <blockquote class="quoteback" data-title="A Text Renaissance" data-author="@ribbonfarm" cite="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">
+      The text renaissance is an actual <em>renaissance. </em>It’s a story of history-inspired renewal in a very fundamental way: exciting recent developments are due in part to a new generation of young product visionaries circling back to the early history of digital text, rediscovering old, abandoned ideas, and reimagining the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.
+      <footer>@ribbonfarm <cite><a href="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/</a></cite></footer>
+      </blockquote>
+      <script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>
+
+      <h3>Example embed (HTML source):</h3>
+
+      <pre>
 &lt;blockquote
   class=&quot;quoteback&quot;
   data-title=&quot;A Text Renaissance&quot;
@@ -39,22 +65,26 @@ edge in terms of the unexplored adjacent possible of the 80s and 90s.
 &lt;footer&gt;
   @ribbonfarm
   &lt;cite&gt;
-    &lt;a href=&quot;https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/&quot;&gt;
-      https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/
-    &lt;/a&gt;
+  &lt;a href=&quot;https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/&quot;&gt;
+    https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/
+  &lt;/a&gt;
   &lt;/cite&gt;
 &lt;/footer&gt;
 &lt;/blockquote&gt;
 &lt;script note=&quot;&quot; src=&quot;https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js&quot;&gt;&lt;/script&gt;
-	</pre>
+      </pre>
 
-	<hr>
-	
-	<h1>This extension: quotebacks-mdx</h1>
-	
-	<h2>Markdown source</h2>
-	
-	<pre>
+      <hr>
+
+      <h2>COMPARISON: this Markdown extension</h2>
+      
+      <p><i>Using <a href="https://python-markdown.github.io">Python-Markdown</a> and this extension, <a href="https://github.com/genmon/quotebacks-mdx">quotebacks-mdx</a></i></p>
+
+      <h3>Markdown source:</h3>
+      
+      <p>The embed is generated from Markdown following a specific format: the citation must be the last line of the blockquote, be preceded by a blank line, and follow the format below.</p>
+
+      <pre>
 > The text renaissance is an actual _renaissance._ It's a story of history-inspired 
 > renewal in a very fundamental way: exciting recent developments are due in part to a new
 > generation of young product visionaries circling back to the early history of digital 
@@ -62,24 +92,39 @@ edge in terms of the unexplored adjacent possible of the 80s and 90s.
 > the unexplored adjacent possible of the 80s and 90s.
 >
 > -- @ribbonfarm, [A Text Renaissance](https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/)
-	</pre>
-	
-	<h2>Output embed</h2>
-	
-	<blockquote class="quoteback" data-title="A Text Renaissance" data-author="@ribbonfarm" cite="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">
-	<p>The text renaissance is an actual <em>renaissance.</em> It’s a story of history-inspired renewal in a very fundamental way: exciting recent developments are due in part to a new generation of young product visionaries circling back to the early history of digital text, rediscovering old, abandoned ideas, and reimagining the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.</p>
-	<footer>— @ribbonfarm <cite><a href="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">A Text Renaissance</a></cite></footer>
-	</blockquote>
+      </pre>
 
-	<h2>Output embed: no Javascript</h2>
+      <h3>Generated embed:</h3>
 
-	<blockquote class="quoteback-disabled" data-title="A Text Renaissance" data-author="@ribbonfarm" cite="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">
-	<p>The text renaissance is an actual <em>renaissance.</em> It’s a story of history-inspired renewal in a very fundamental way: exciting recent developments are due in part to a new generation of young product visionaries circling back to the early history of digital text, rediscovering old, abandoned ideas, and reimagining the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.</p>
-	<footer>— @ribbonfarm, <cite><a href="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">A Text Renaissance</a></cite></footer>
-	</blockquote>
+      <p>The embed is generated by converting the Markdown to HTML and using this extension. It looks the same as the official embed.</p>
 
-	<h2>Output embed: HTML source</h2>
-	<pre>
+      <blockquote class="quoteback" data-title="A Text Renaissance" data-author="@ribbonfarm" cite="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">
+        <p>The text renaissance is an actual <em>renaissance.</em> It’s a story of history-inspired renewal in a very fundamental way: exciting recent developments are due in part to a new generation of young product visionaries circling back to the early history of digital text, rediscovering old, abandoned ideas, and reimagining the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.</p>
+        <footer>— @ribbonfarm <cite><a href="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">A Text Renaissance</a></cite></footer>
+      </blockquote>
+
+      <h3>Generated embed, without Javascript:</h3>
+
+      <p>Without Javascript (i.e. when not including <code>quoteback.js</code>), the blockquote appears in the browser like this.</p>
+
+      <blockquote class="quoteback-disabled" data-title="A Text Renaissance" data-author="@ribbonfarm" cite="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">
+      <p>The text renaissance is an actual <em>renaissance.</em> It’s a story of history-inspired renewal in a very fundamental way: exciting recent developments are due in part to a new generation of young product visionaries circling back to the early history of digital text, rediscovering old, abandoned ideas, and reimagining the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.</p>
+      <footer>— @ribbonfarm, <cite><a href="https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/">A Text Renaissance</a></cite></footer>
+      </blockquote>
+
+      <h3>Generated embed (HTML source):</h3>
+
+      <p>The HTML source of the generated embed <strong>differs</strong> from the official embed.</p>
+
+      <p>These changes:</p>
+
+      <ul>
+        <li>the <code>blockquote</code> tag now wraps child <code>p</code> tags</li>
+        <li>the script is not included automatically, but isincluded by the containing page</li>
+        <li>the footer/cite has been reformatted to avoid raw URLs in the case of the no-script fallback</li>
+      </ul>
+
+      <pre>
 &lt;blockquote
   class=&quot;quoteback&quot;
   data-title=&quot;A Text Renaissance&quot;
@@ -95,43 +140,39 @@ edge in terms of the unexplored adjacent possible of the 80s and 90s.
 &lt;footer&gt;
   <span class="added">—</span>@ribbonfarm<span class="added">,</span>
   &lt;cite&gt;
-    &lt;a href=&quot;https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/&quot;&gt;
-      <span class="deleted">https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/</span>
-      <span class="added">A Text Renaissance</span>
-    &lt;/a&gt;
+  &lt;a href=&quot;https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/&quot;&gt;
+    <span class="deleted">https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/</span>
+    <span class="added">A Text Renaissance</span>
+  &lt;/a&gt;
   &lt;/cite&gt;
 &lt;/footer&gt;
 &lt;/blockquote&gt;
 <span class="deleted">&lt;script note=&quot;&quot; src=&quot;https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js&quot;&gt;&lt;/script&gt;</span>
-	</pre>
+      </pre>
 
-	<h3>Rationale for differences</h3>
-	
-	<ul>
-	  <li>blockquote should include p tags</li>
-	  <li>script will be included by page itself</li>
-	  <li>footer/cite to look better in case of no-script fallback</li>
-	</ul>
-  
-  	<h3>For reference: converted Markdown <em>without</em> this extension</h3>
+      <h3>Generated HTML <i>without</i> using this extension (HTML source):</h3>
 
-	<pre>
+      <p>If this extension is no longer used (for example, the content is ported to another system that doesn't use Quotebacks), the Markdown source still converts to an attractive and readable blockquote with a text citation at the bottom. When viewed in the browser, it appears identical to the "Generated embed, without Javascript" above.</p>
+
+      <pre>
 &lt;blockquote&gt;
   &lt;p&gt;
-    The text renaissance is an actual &lt;em&gt;renaissance.&lt;/em&gt; It&apos;s a story 
-    of history-inspired renewal in a very fundamental way: exciting recent developments 
-    are due in part to a new generation of young product visionaries circling back to the 
-    early history of digital text, rediscovering old, abandoned ideas, and reimagining
-    the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.
+  The text renaissance is an actual &lt;em&gt;renaissance.&lt;/em&gt; It&apos;s a story 
+  of history-inspired renewal in a very fundamental way: exciting recent developments 
+  are due in part to a new generation of young product visionaries circling back to the 
+  early history of digital text, rediscovering old, abandoned ideas, and reimagining
+  the bleeding edge in terms of the unexplored adjacent possible of the 80s and 90s.
   &lt;/p&gt;
   &lt;p&gt;
-    -- @ribbonfarm,
-    &lt;a href=&quot;https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/&quot;&gt;
-  	A Text Renaissance
-    &lt;/a&gt;
+  -- @ribbonfarm,
+  &lt;a href=&quot;https://www.ribbonfarm.com/2020/02/24/a-text-renaissance/&quot;&gt;
+  A Text Renaissance
+  &lt;/a&gt;
   &lt;/p&gt;
 &lt;/blockquote&gt;
-	</pre>
+      </pre>
+
+  </main>
 
   <!-- Included at the bottom so that the script is only fetched only -->
   <script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>

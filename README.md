@@ -7,7 +7,7 @@ Python-Markdown extension to support the [Quotebacks](https://quotebacks.net) fo
 
 Copy `quotebacks_mdx.py` into your script directory.
 
-Python-Markdown is required. Python 3 is required.
+[Python-Markdown](https://python-markdown.github.io) is required. Python 3 is required.
 
 
 ## Motivation
@@ -18,9 +18,9 @@ HTML in the content source files.
 The Markdown format has been chosen such that it will look natural even if this extension
 is not used.
 
-(There have been small changes to the final HTML so that the blockquote and citation are
+There have been small changes to the final HTML so that the blockquote and citation are
 still well formatted even when quotebacks.js is not loaded. See
-`docs/index.html` for details.)
+[comparisons](https://genmon.github.io/quotebacks-mdx/) for details.
 
 
 ## Usage
