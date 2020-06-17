@@ -20,7 +20,7 @@ is not used.
 
 (There have been small changes to the final HTML so that the blockquote and citation are
 still well formatted even when quotebacks.js is not loaded. See
-`docs/quoteback-example.html` for details.)
+`docs/index.html` for details.)
 
 
 ## Usage
@@ -50,6 +50,15 @@ print(html)
 # Include quotebacks.js at the bottom of page, if quotebacks were found
 if md.quotebacks_found:
     html += quotebacks_mdx.QUOTEBACKS_SCRIPT_TAG
+```
+
+The HTML output is:
+
+```html
+<blockquote class="quoteback"  data-title="LINKTEXT" data-author="AUTHOR" cite="URL">
+<p>QUOTED-CONTENT</p>
+<footer>– AUTHOR, <cite><a href="URL">LINKTEXT</a></cite></footer>
+</blockquote>
 ```
 
 
